@@ -1,0 +1,15 @@
+# all files cache from blender
+*.blend1
+
+# Test files from blender
+untiltled*
+
+# Another files
+*.pdf
+*.txt
+
+# My old python file plugin
+viejo.py
+
+# Cache python files
+__pycache__
