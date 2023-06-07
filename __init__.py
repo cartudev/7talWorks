@@ -12,10 +12,10 @@ bl_info = {
     "name": "7tals",
     "author": "Cartu",
     "location": "View3D > Add Mesh / Sidebar > Create Tab",
-    "version": (0, 0, 9),
+    "version": (0, 1, 0),
     "blender": (3, 5, 0),
     "description": "Generador de paneleria y sistema de aluminio",
-    "doc_url": "{BLENDER_MANUAL_URL}/addons/add_mesh/archimesh.html",
+    "doc_url": "",
     "category": "Add Mesh"
     }
 
