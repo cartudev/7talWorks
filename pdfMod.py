@@ -1,7 +1,7 @@
 
 import bpy
 
-
+#this intalls the fpdf module in blender.
 def testImport():
     try:
         from fpdf import FPDF
@@ -31,7 +31,7 @@ def testImport():
         print('no se pudo instalar el modulo fpdf')
 
 
-
+#references and details names used for the pdf export
 references = {
     'ND': "No definido",
     'pl': "Placa",
@@ -58,7 +58,7 @@ detalles = {
     'me': "Material empatillado",
 }
 
-
+#order for obj in a list to export the table in a pdf.
 def objectsOrder():
 
     objectsCount = {
@@ -107,8 +107,8 @@ def objectsOrder():
                 TABLE_DATA.append([tipo, objectsCount['tipo'][tipo][nombres]['medida'], objectsCount['tipo'][tipo][nombres]['detallesMaterial'] , str(objectsCount['tipo'][tipo][nombres]['cantidad']),objectsCount['tipo'][tipo][nombres]['materialAnidado']])
     pdfLaunch(TABLE_DATA)
 
-    
 
+#layount and design of the pdf.
 def pdfLaunch(data):
 
 
@@ -117,7 +117,7 @@ def pdfLaunch(data):
 
     class PDF(FPDF):
         def footer(self):
-            # Position cursor at 1.5 cm from bottom:
+            # Position cursor at 1.0 cm from bottom:
             self.set_y(-10)
             # Setting font: helvetica italic 8
             self.set_text_color(200,50,50)

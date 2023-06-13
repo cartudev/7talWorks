@@ -5,6 +5,8 @@ from bpy.props import IntProperty, CollectionProperty, FloatVectorProperty, Bool
                       FloatProperty, EnumProperty
 
 
+# Adding properties for objects.
+
 class baseprops(PropertyGroup):
     mat7tw: BoolProperty(name="Objeto 7tal Works",
                           description="Es un objeto del software?",
@@ -48,6 +50,7 @@ class baseprops(PropertyGroup):
     descripciondetalles: StringProperty(name="Descripcion de detalles", maxlen=70,
                            description="Alguna descripcion de los detalles adicionales")
 
+#base type of objects for the addon
 
 def items_tipo(self, context):
         return[
@@ -62,6 +65,8 @@ def items_tipo(self, context):
 
 
 def items_propiedad(self, context):
+
+#properties for columns
     if bpy.data.scenes['Scene'].agregar_tipo == 'addcolumnas' :
         return[
             ('propcol2500', 'columnas 2500', 'Columnas 2500'),
@@ -71,6 +76,7 @@ def items_propiedad(self, context):
             ('propcol335', 'columnas 335', 'Columnas 335')
         ]
 
+#properties for boards
     if bpy.data.scenes['Scene'].agregar_tipo == 'addplacas' :
         return[
             ('propplc950', 'placa 967 x 2417', 'The zeroth item'),
@@ -82,7 +88,7 @@ def items_propiedad(self, context):
             ('propplc950x2150', 'placa 967 x 2067', 'The zeroth item'),
             ('propplc950sf', 'placa 967 x 2417 simple faz', 'The zeroth item')
         ]
-
+#properties for profiles
     if bpy.data.scenes['Scene'].agregar_tipo == 'addperfil' :
         return[
             ('proppfl950', 'perfil 950', 'The zeroth item'),
@@ -92,7 +98,7 @@ def items_propiedad(self, context):
             ('proppfl660', 'perfil 660', 'The zeroth item'),
             ('proppfl207_5', 'perfil 207,5', 'The third item'),
         ]
-
+#properties for 
     if bpy.data.scenes['Scene'].agregar_tipo == 'addcenefas' :
         return[
             ('propcen1x455', 'cenefa 472 x 252', 'cenefa 0.5 m'),
@@ -120,12 +126,13 @@ def items_propiedad(self, context):
             ('propcen2x4415', 'cenefa 4415 x 404', 'cenefa 4.5 m grande'),
             ('propcen2x4910', 'cenefa 4910 x 404', 'cenefa 5 m grande'),
         ]
-
+#properties for modules (not added yet)
     if bpy.data.scenes['Scene'].agregar_tipo == 'addestanterias' :
         return[
     ('modulo2150exical', 'modulo exical 2150', 'modulo de pared 2150')
         ]
 
+#properties for anothers especials items (not added yet)
     if bpy.data.scenes['Scene'].agregar_tipo == 'addespeciales' :
         return[
             ('proppuerta950', 'puerta 950 x 2500', 'puerta'),
@@ -133,12 +140,14 @@ def items_propiedad(self, context):
 
         ]
 def finalAltura(self, context):
+#position of object in z for profiles.
         return[
             ('alturaBase', 'altura Base', 'altura en la base del elemento'),
             ('alturaFinal', 'altura Final', 'altura en el final del elemento')
         ]
 
 def angulos(self, context):
+#relatives angles... for a faster work.
         return[
             ('0', '0', 'direccion final 0ª'),
             ('90', '+90', 'direccion final 90ª'),
@@ -147,7 +156,7 @@ def angulos(self, context):
         ]
 
 
-
+# objects selected from base file for diferents properties 
 def obj1():
     agpr = bpy.context.scene.agregar_propiedad
     if agpr == 'propplc950':

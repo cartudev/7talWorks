@@ -7,9 +7,15 @@ untitled*
 # Another files
 *.pdf
 *.txt
+assets
+
 
 # My old python file plugin
 viejo.py
 
 # Cache python files
 __pycache__
+
+#files for releases
+*.zip
+

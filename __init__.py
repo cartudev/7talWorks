@@ -213,8 +213,9 @@ def dirrot():
 async def addcol():
     direccionXVar = direccion('x', 'last')
     direccionYVar = direccion('y', 'last')
+    obj = bpy.context.selected_objects[0]
+
     if  bpy.context.selected_objects[0].STW.mat7tw:
-        obj = bpy.context.selected_objects[0]
         lastloc = (obj.location.x+(contexto()*direccionXVar),obj.location.y+(contexto()*direccionYVar),0)
     else:
         lastloc = (obj.location.x , obj.location.y ,0)
